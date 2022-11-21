@@ -7,17 +7,18 @@
     stages {
         stage('First Stage') {
             steps {
-                echo 'Hello World'
+                echo 'First stage'
                 sh 'echo ${ENV_URL}'
             }
     }
         stage('Second Stage') {
         environment{
              ENV_URL = "stage.google.com"
-    }
+            }
 
             steps {
-                echo 'Hello World'
+                echo 'second stage'
+                sh 'echo ${ENV_URL}'
             }
     }
         stage('third Stage') {
