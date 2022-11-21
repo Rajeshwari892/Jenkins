@@ -12,7 +12,7 @@
             steps {
                 echo 'hello First stage'
                 sh 'echo ${ENV_URL}'
-                sh 'echo $ACCESS_KEY'
+                sh "echo access key is .. $ACCESS_KEY"
             }
     }
         stage('Second Stage') {
@@ -22,8 +22,9 @@
 
             steps {
                 echo 'hello second stage'
-                sh 'echo ${ENV_URL}'
-                sh 'echo $SSH_KEY'       
+                sh "echo ${ENV_URL}"
+                sh "echo ssh key is .. $SSH_KEY"
+
             }
     }
         stage('third Stage') {
