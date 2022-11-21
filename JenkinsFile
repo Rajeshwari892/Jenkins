@@ -25,7 +25,7 @@
                 echo 'hello First stage'
                 sh "echo ${ENV_URL} "
                 sh "echo access key is .. $ACCESS_KEY"
-                sh "sleep 1000"
+                sh "sleep 10"
             }
     }
         stage('Second Stage') {
