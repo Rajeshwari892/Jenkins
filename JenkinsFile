@@ -13,6 +13,11 @@
         SSH_CRED = credentials('SSH')
 
     }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '1')) }
+        disableConcurrentBuilds()
+        timeout(time: 1, unit: 'MINUTES')
+    }
 
     stages {
         stage('First Stage') {
@@ -20,6 +25,7 @@
                 echo 'hello First stage'
                 sh "echo ${ENV_URL} "
                 sh "echo access key is .. $ACCESS_KEY"
+                sh "sleep 1000"
             }
     }
         stage('Second Stage') {
