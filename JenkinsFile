@@ -3,7 +3,7 @@
     environment{
         ENV_URL = "pipeline.google.com"
         ACCESS_KEY = credentials('AWS_ACCESS_KEY')
-        SSH_KEY = credentials('SSH')
+        SSH_CRED = credentials('SSH')
 
     }
 
@@ -11,7 +11,7 @@
         stage('First Stage') {
             steps {
                 echo 'hello First stage'
-                sh 'echo ${ENV_URL}'
+                sh "echo ${ENV_URL} "
                 sh "echo access key is .. $ACCESS_KEY"
             }
     }
@@ -21,9 +21,9 @@
             }
 
             steps {
-                echo 'hello second stage'
+                echo "hello second stage"
                 sh "echo ${ENV_URL}"
-                sh "echo ssh key is .. $SSH_KEY"
+                sh "echo ssh key is .. $SSH_CRED"
 
             }
     }
