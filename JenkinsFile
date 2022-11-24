@@ -25,7 +25,7 @@
     stages {
         stage('First Stage') {
             steps {
-               // sh "hostname"   // I want this job to run this on WS
+                sh "hostname"   // I want this job to run this on WS
                 sh 'mvn --version'
                 sh "echo One"
                 sh "env"
